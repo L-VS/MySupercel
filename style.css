@@ -1,61 +1,75 @@
 body {
+  margin: 0;
   background-color: #0a0a0a;
   color: #ffffff;
-  font-family: 'Bangers', cursive;
-  margin: 0;
-  padding: 0;
+  font-family: 'Bangers', cursive, sans-serif;
+  overflow-x: hidden;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
   background: #111;
-  border-bottom: 2px solid #333;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #444;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: #111;
+  padding: 0.5rem;
+  border-bottom: 1px solid #333;
 }
 
 button {
-  background-color: #ffffff;
+  background-color: #fff;
   color: #000;
-  border: none;
-  padding: 0.5rem 1rem;
   border-radius: 10px;
+  padding: 0.5rem 1rem;
   font-weight: bold;
+  border: none;
   transition: transform 0.2s ease;
-  margin: 0.2rem;
 }
 
 button:hover {
   transform: scale(1.05);
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  background-color: #111;
-  padding: 0.5rem;
-}
-
-main {
+.tab {
   padding: 1rem;
 }
 
-.tab {
+.hidden {
   display: none;
 }
 
-.tab:not(.hidden) {
-  display: block;
+#splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  animation: fadeOut 2s ease 2s forwards;
 }
 
-iframe {
-  border: none;
-  border-radius: 10px;
-  background-color: #fff;
+.logo-start {
+  width: 120px;
+  height: 120px;
+}
+
+.start-text {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
