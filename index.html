@@ -2,48 +2,39 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MySupercel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" href="icon-192.png">
 </head>
 <body>
-  <header>
-    <img src="icon-192.png" alt="Logo" class="logo">
-    <h1>MySupercel</h1>
-    <button id="mode-toggle">Mode Jour/Nuit</button>
-  </header>
+  <div id="splash">
+    <img src="icon-192.png" class="logo-start" alt="MySupercel Logo">
+    <h1 class="start-text">MySupercel</h1>
+  </div>
 
-  <nav>
-    <button onclick="switchTab('accueil')">Accueil</button>
-    <button onclick="switchTab('boutique')">Boutique</button>
-    <button onclick="switchTab('recompenses')">Récompenses</button>
-    <button onclick="switchTab('actus')">Actus</button>
-  </nav>
+  <main class="hidden" id="main-app">
+    <header>
+      <img src="icon-192.png" alt="Logo" class="logo">
+      <h1>MySupercel</h1>
+    </header>
 
-  <main>
-    <section id="accueil" class="tab">
-      <h2>Profils</h2>
-      <input type="email" placeholder="E-mail Supercell ID" id="emailInput">
-      <button onclick="ajouterProfil()">Ajouter</button>
-      <div id="profile-list"></div>
+    <nav>
+      <button onclick="openTab('news')">Actus</button>
+      <button onclick="openTab('cadeaux')">Cadeaux</button>
+    </nav>
+
+    <section id="news" class="tab">
+      <iframe id="news-frame" src="" width="100%" height="600"></iframe>
     </section>
 
-    <section id="boutique" class="tab hidden">
-      <h2>Boutique Supercell</h2>
-      <iframe src="https://store.supercell.com" width="100%" height="600"></iframe>
-    </section>
-
-    <section id="recompenses" class="tab hidden">
-      <h2>Récompenses disponibles</h2>
-      <iframe src="https://link.brawlstars.com/" width="100%" height="600"></iframe>
-    </section>
-
-    <section id="actus" class="tab hidden">
-      <h2>Actus Supercell</h2>
-      <iframe src="https://brawlify.com/news" width="100%" height="600"></iframe>
+    <section id="cadeaux" class="tab hidden">
+      <p>Appuie ci-dessous pour récupérer tes cadeaux :</p>
+      <a href="https://link.brawlstars.com/" target="_blank" rel="noopener">
+        <button class="gift-button">Ouvrir les Cadeaux dans Safari</button>
+      </a>
     </section>
   </main>
 
